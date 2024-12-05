@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smokehouse Farms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Smokehouse Farms</div>
+        <nav>
+            <a href="#shop">Shop</a>
+            <a href="#why">Why Choose Us</a>
+            <a href="#ordering">How It Works</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="overlay"></div>
+            <h1>Can love make a better tasting chicken? We think so.</h1>
+            <p>Better chicken comes down to daily movement to fresh pasture. Taste the difference yourself!</p>
+            <a class="shop-button" href="#delivery-check">Shop Now</a>
+        </section>
+
+        <section id="ordering" class="ordering-process">
+            <div class="order-process">
+                <h2>Ordering Process for Fall 2025</h2>
+                <p>At Smokehouse Farms, we want to make your ordering experience simple. Here’s how it works:</p>
+                <ol>
+                    <li><strong>Place Your Preorder:</strong> Click on "Order Now" to go to our secure payment page.</li>
+                    <li><strong>Receive Confirmation:</strong> You'll get a confirmation email with your order details.</li>
+                    <li><strong>Pickup Your Chicken:</strong> Come to the farm to collect your chicken on the scheduled pickup date.</li>
+                </ol>
+                <p>Thank you for choosing Smokehouse Farms! We look forward to seeing you this Fall!</p>
+            </div>
+        </section>
+
+        <section id="shop" class="shop">
+            <h2>Shop Our Birds</h2>
+            <div class="products">
+                <div class="product">
+                    <h3>Whole Chicken</h3>
+                    <p>$25.00</p>
+                    <a class="buy-button" href="C:\Users\Sheesh\AppData\Local\Programs\Python\Python312\Lib\projects\farm-website\checkout.html">Order Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="location">
+            <h2>Where We Are Located</h2>
+            <p>For on-farm pickup, please see the map below:</p>
+            <img src="Map.png" alt="Location Graphic" style="max-width: 100%; height: auto; border-radius: 8px;">
+        </section>
+
+        <section id="why" class="why-choose-us">
+            <h2>Why Choose Smokehouse Farms?</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <h3>Healthier Birds</h3>
+                    <p>Our chickens are raised on fresh pasture, foraging for bugs and grass, resulting in a more nutritious product.</p>
+                </div>
+                <div class="benefit">
+                    <h3>Regenerative Practices</h3>
+                    <p>Daily movement of our birds improves soil health and regenerates the land, contributing to a sustainable ecosystem.</p>
+                </div>
+                <div class="benefit">
+                    <h3>Quality You Can Taste</h3>
+                    <p>Our whole birds are rich in flavor and nutrients, providing a delicious and healthy option for your family.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Smokehouse Farms. All rights reserved.</p>
+        <p><a href="#contact">Contact Us</a></p>
+    </footer>
+
+    <script>
+        const farmLocation = { lat: 37.31649316953272, lng: -84.06396094052958 }; // Example farm location
+        const deliveryRadius = 105; // Delivery radius in miles
+        const apiKey = '3d499f4dd3aa4fc6ab2a30c2021be6b1'; // Replace with your OpenCage API key
+
+        function checkDeliveryRadius() {
+            const locationInput = document.getElementById('user-location').value;
+            const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(locationInput)}&key=${apiKey}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.results.length > 0) {
+                        const userLocation = {
+                            lat: data.results[0].geometry.lat,
+                            lng: data.results[0].geometry.lng
+                        };
+                        const distance = getDistance(userLocation, farmLocation);
+                        
+                        if (distance <= deliveryRadius) {
+                            document.getElementById('message').textContent = 'Delivery is available to your area!';
+                            document.getElementById('shop').style.display = 'block'; // Show the shop section
+                        } else {
+                            document.getElementById('message').textContent = 'Sorry, we do not deliver to your area.';
+                            document.getElementById('shop').style.display = 'none';
+                        }
+                    } else {
+                        document.getElementById('message').textContent = 'Unable to find location. Please try again.';
+                        document.getElementById('shop').style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('message').textContent = 'An error occurred. Please try again later.';
+                    document.getElementById('shop').style.display = 'none';
+                });
+        }
+
+        function getDistance(loc1, loc2) {
+            const R = 3958.8; // Radius of Earth in miles
+            const dLat = (loc2.lat - loc1.lat) * Math.PI / 180;
+            const dLon = (loc2.lng - loc1.lng) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                      Math.cos(loc1.lat * Math.PI / 180) * Math.cos(loc2.lat * Math.PI / 180) *
+                      Math.sin(dLon/2) * Math.sin(dLon/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return R * c; // Distance in miles
+        }
+    </script>
+</body>
+</html>
