@@ -3,7 +3,7 @@ from flask import Flask, jsonify, redirect, request
 
 import stripe
 # This is your test secret API key.
-stripe.api_key = 'sk_test_51QS0sAP4z81OvHqbwNcVSe3NGCuNiW1X2ImyO1q9evHcSfmGICdWbOQHmt7Q6Zpe8T5wlCd1dRn6rPj85fS8bKaC00J3ZJCKxO'
+stripe.api_key = ''
 
 app = Flask(__name__,
             static_url_path='',
