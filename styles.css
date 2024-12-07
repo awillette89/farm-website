@@ -36,7 +36,7 @@ nav a {
 
 nav a:hover {
     color: #5b3e36;
-    transform: scale(1.05); /* Slightly scale up on hover */
+    transform: scale(1.05);
 }
 
 /* Hero Section Styles */
@@ -69,7 +69,6 @@ nav a:hover {
 .hero h1, .hero p {
     position: relative;
     z-index: 2;
-    margin: 0;
 }
 
 /* Shop Button Styles */
@@ -88,18 +87,36 @@ nav a:hover {
 
 .shop-button:hover {
     background-color: #5b3e36;
-    transform: scale(1.05); /* Scale up on hover */
+    transform: scale(1.05);
 }
 
 /* Section Styles */
 .section {
-    background-color: #ffffff;
+    background-color: #fff; /* White background for sections */
     padding: 40px 20px;
     margin: 20px 0;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Additional Distinguishing Styles */
+.ordering-section {
+    background-color: #e3f2fd; /* Light blue for Ordering section */
+}
+
+.shop-section {
+    background-color: #fff3e0; /* Light orange for Shop section */
+}
+
+.location-section {
+    background-color: #fce4ec; /* Light pink for Location section */
+}
+
+.why-section {
+    background-color: #e8f5e9; /* Light green for Why Choose Us section */
+}
+
+/* Shop Styles */
 .shop {
     text-align: center;
 }
@@ -124,7 +141,7 @@ nav a:hover {
 
 .product:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px);
 }
 
 /* Buy Button Styles */
