@@ -1,4 +1,4 @@
-import { loadStripe } from '/stripe-js';
+import { loadStripe } from '/checkout.js';
 
 const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
 
