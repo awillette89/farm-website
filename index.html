@@ -42,11 +42,14 @@
         <section id="shop" class="shop">
             <h2>Shop Our Birds</h2>
             <div class="products">
-                <div class="product">
-                    <h3>Whole Chicken</h3>
-                    <p>$25.00</p>
-                    <a class="buy-button" href="https://www.smokehousefarmsky.com/checkout.html">Order Now</a>
-                </div>
+                <script async src="https://js.stripe.com/v3/buy-button.js">
+                </script>
+
+                <stripe-buy-button
+                buy-button-id="buy_btn_1QTTFHP4z81OvHqbw9w5yRBB"
+                publishable-key="pk_live_51QS0sAP4z81OvHqbXqYTPLXgb8eFBNIs6OctUBjibV2zFGMvg7pDgKNcfsU6UAdzwg5nGHxHulM1tSjATO0sXuUV00fxBMGJwS"
+            >
+            </stripe-buy-button>
             </div>
         </section>
 
