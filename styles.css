@@ -41,7 +41,7 @@ nav a:hover {
 
 /* Hero Section Styles */
 .hero {
-    background-image: url('friendlies.jpg'); /* Your background image */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('friendlies.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -54,21 +54,18 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-bottom: 5px solid #6d4c41;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+.hero h1 {
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 0 0 10px;
 }
 
-.hero h1, .hero p {
-    position: relative;
-    z-index: 2;
+.hero p {
+    font-size: 20px;
+    margin: 0 0 20px;
 }
 
 /* Shop Button Styles */
@@ -78,16 +75,17 @@ nav a:hover {
     background-color: #6d4c41;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     margin-top: 20px;
     position: relative;
     z-index: 2;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .shop-button:hover {
     background-color: #5b3e36;
     transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Section Styles */
