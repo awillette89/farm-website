@@ -1,6 +1,6 @@
 require('dotenv').config(); // Load environment variables
 
-const stripe = Stripe(process.env.STRIPE_PUBLIC_KEY); // Use the environment variable for the public key
+const stripe = stripe(process.env.STRIPE_PUBLIC_KEY); // Use the environment variable for the public key
 
 const appearance = { /* appearance */ };
 const options = {
