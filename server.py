@@ -1,15 +1,18 @@
 import os
 from flask import Flask, jsonify, redirect, request
-
 import stripe
-# This is your test secret API key.
-stripe.api_key = ''
+from dotenv import load_dotenv
+
+load_dotenv()
+stripe.api_key = os.getenv('STRIPE_SECRET_KEY')
+
+
 
 app = Flask(__name__,
             static_url_path='',
             static_folder='public')
 
-YOUR_DOMAIN = 'http://localhost:4242'
+YOUR_DOMAIN = 'https://www.smokehousefarmsky.com'
 
 @app.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
