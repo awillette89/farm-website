@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -6,6 +7,7 @@ body {
     color: #333;
 }
 
+/* Header Styles */
 header {
     background-color: #fbc02d;
     padding: 20px;
@@ -19,28 +21,35 @@ header .logo {
     color: #6d4c41;
 }
 
+/* Navigation Styles */
+nav {
+    margin-top: 15px;
+}
+
 nav a {
     margin: 0 15px;
     text-decoration: none;
     color: #6d4c41;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
-    color: #5b3e36; /* Darker shade on hover */
+    color: #5b3e36;
+    transform: scale(1.05); /* Slightly scale up on hover */
 }
 
+/* Hero Section Styles */
 .hero {
     background-image: url('friendlies.jpg'); /* Your background image */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 80px 20px; /* Increased padding for a more spacious look */
+    padding: 80px 20px;
     text-align: center;
     color: white;
     position: relative;
-    min-height: 400px; /* Increased min-height for more impact */
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,9 +72,10 @@ nav a:hover {
     margin: 0;
 }
 
+/* Shop Button Styles */
 .shop-button {
     display: inline-block;
-    padding: 12px 24px; /* Slightly larger button */
+    padding: 12px 24px;
     background-color: #6d4c41;
     color: white;
     text-decoration: none;
@@ -73,29 +83,32 @@ nav a:hover {
     margin-top: 20px;
     position: relative;
     z-index: 2;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .shop-button:hover {
-    background-color: #5b3e36; /* Darker shade on hover */
+    background-color: #5b3e36;
+    transform: scale(1.05); /* Scale up on hover */
 }
 
+/* Section Styles */
 .section {
-    background-color: #ffffff; /* White background for sections */
-    padding: 40px 20px; /* Padding for sections */
-    margin: 20px 0; /* Margin to separate sections */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .shop {
     text-align: center;
 }
 
+/* Product Styles */
 .products {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allow wrapping of products */
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
@@ -106,13 +119,15 @@ nav a:hover {
     width: 300px;
     text-align: center;
     margin: 10px;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .product:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
+/* Buy Button Styles */
 .buy-button {
     padding: 10px 15px;
     background-color: #6d4c41;
@@ -123,21 +138,24 @@ nav a:hover {
 }
 
 .buy-button:hover {
-    background-color: #5b3e36; /* Darker shade on hover */
+    background-color: #5b3e36;
 }
 
+/* Footer Styles */
 footer {
     background-color: #fbc02d;
     text-align: center;
-    padding: 15px 0; /* Increased padding */
-    border-top: 2px solid #6d4c41; /* Top border for separation */
+    padding: 15px 0;
+    border-top: 2px solid #6d4c41;
 }
 
+/* Delivery Check Styles */
 #delivery-check {
     margin: 20px 0;
     text-align: center;
 }
 
+/* Input and Button Styles */
 input[type="text"] {
     padding: 10px;
     width: 300px;
@@ -157,9 +175,10 @@ button {
 }
 
 button:hover {
-    background-color: #5b3e36; /* Darker shade on hover */
+    background-color: #5b3e36;
 }
 
+/* Message Styles */
 #message {
     margin-top: 10px;
     font-weight: bold;
