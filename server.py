@@ -12,7 +12,7 @@ app = Flask(__name__,
             static_url_path='',
             static_folder='public')
 
-YOUR_DOMAIN = 'http://localhost:4242'
+YOUR_DOMAIN = 'https://www.smokehousefarmsky.com'
 
 @app.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
