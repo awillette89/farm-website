@@ -2,14 +2,23 @@ import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
 
-const appearance = { /* appearance */ };
-const options = {
-  layout: {
-    type: 'tabs',
-    defaultCollapsed: false,
-  }
-};
+initialize();
 
-const elements = stripe.elements({ clientSecret, appearance });
-const paymentElement = elements.create('payment', options);
-paymentElement.mount('#payment-element');
+// Fetch Checkout Session and retrieve the client secret
+async function initialize() {
+  const fetchClientSecret = async () => {
+    const response = await fetch("/create-checkout-session", {
+      method: "POST",
+    });
+    const { clientSecret } = await response.json();
+    return clientSecret;
+  };
+
+  // Initialize Checkout
+  const checkout = await stripe.initEmbeddedCheckout({
+    fetchClientSecret,
+  });
+
+  // Mount Checkout
+  checkout.mount('#checkout');
+}
