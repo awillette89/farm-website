@@ -1,4 +1,4 @@
-import { loadStripe } from '@stripe/stripe-js';
+import { loadStripe } from '/stripe-js';
 
 const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
 
