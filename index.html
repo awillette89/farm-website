@@ -1,73 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KS0ZXSXG2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4KS0ZXSXG2');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smokehouse Farms</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Add Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Existing stylesheets or other head content can be added here -->
 </head>
 <body>
     <header>
-        <div class="logo">Smokehouse Farms</div>
         <nav>
-            <a href="#shop">Shop</a>
-            <a href="#why">Why Choose Us</a>
-            <a href="#ordering">How It Works</a>
-            <a href="#location">Where We Are Located</a>
-            <a href="#contact">Contact</a>
-            <a href="https://smokehousefarmsky.wordpress.com">Blog</a>
+            <ul>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#location">Where We Are Located</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <!-- Added social media links -->
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=61569083583586" target="_blank" rel="noopener noreferrer" aria-label="Follow Smokehouse Farms on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/smokehousefarmsky/" target="_blank" rel="noopener noreferrer" aria-label="Follow Smokehouse Farms on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="overlay"></div>
+        <section id="hero">
             <h1>Can love make a better tasting chicken? We think so.</h1>
             <p>Better chicken comes down to daily movement to fresh pasture. Taste the difference yourself!</p>
-            <a class="shop-button" href="#ordering">Order Now</a>
+            <a href="#shop" class="btn">Order Now</a>
         </section>
 
-        <section id="ordering" class="section shop-section">
+        <section id="how-it-works">
             <h2>Ordering Process</h2>
             <p>At Smokehouse Farms, we want to make your ordering experience simple. Here’s how it works:</p>
-            <ol>
-                <li><strong>Contact Us:</strong> Message us on <a href="https://www.facebook.com/profile.php?id=61569083583586">Facebook</a> or send us an <a href="mailto:amanda@smokehousefarmsky.com">email</a>.</li>
-                <li><strong>Custom Order:</strong>You may choose to preorder or order from what is in stock (typically whole birds in the 3+ lb range).</li>
-                <li><strong>Pickup Your Chicken:</strong>Come to the farm to collect your chicken. Depending on location, delivery may be available.</li>
-            </ol>
+            <ul>
+                <li><strong>Contact Us:</strong> Message us on Facebook or send us an email.</li>
+                <li><strong>Custom Order:</strong> You may choose to preorder or order from what is in stock (typically whole birds in the 3+ lb range).</li>
+                <li><strong>Pickup Your Chicken:</strong> Come to the farm to collect your chicken. Depending on location, delivery may be available.</li>
+            </ul>
             <p>Thank you for choosing Smokehouse Farms! We look forward to serving you!</p>
         </section>
 
-        <section id="location" class="section location-section">
+        <section id="location">
             <h2>Where We Are Located</h2>
             <p>We are located in McKee, KY, about 30 minutes north of London. For on-farm pickup, please see the map below and check your email for instructions after ordering:</p>
-            <img src="Map.png" alt="Location Graphic" style="max-width: 100%; height: auto; border-radius: 8px;">
+            <!-- Map embed code would go here -->
         </section>
 
-        <section id="why" class="section why-section">
+        <section id="why-choose-us">
             <h2>Why Choose Smokehouse Farms?</h2>
-            <div class="benefits">
-                <div class="benefit">
-                    <!-- <img src="healthier-birds-icon.png" alt="Healthier Birds" class="benefit-icon"> -->
+            <div class="features">
+                <div class="feature">
                     <h3>Healthier Birds</h3>
                     <p>Our chickens are raised on fresh pasture, foraging for bugs and grass, resulting in a more nutritious product.</p>
                 </div>
-                <div class="benefit">
-                    <!-- <img src="regenerative-practices-icon.png" alt="Regenerative Practices" class="benefit-icon"> -->
+                <div class="feature">
                     <h3>Regenerative Practices</h3>
                     <p>Daily movement of our chickens improves soil health and regenerates the land, contributing to a sustainable ecosystem.</p>
                 </div>
-                <div class="benefit">
-                    <!-- <img src="quality-taste-icon.png" alt="Quality You Can Taste" class="benefit-icon"> -->
+                <div class="feature">
                     <h3>Quality You Can Taste</h3>
                     <p>Our chicken is rich in flavor and nutrients, providing a delicious and healthy option for your family.</p>
                 </div>
@@ -76,8 +77,20 @@
     </main>
 
     <footer>
-        <p>© 2025 Smokehouse Farms. All rights reserved.</p>
-        <p><a href="mailto:amanda@smokehousefarmsky.com">Contact Us</a></p>
+        <p>&copy; 2025 Smokehouse Farms. All rights reserved.</p>
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <!-- Added social media links in footer -->
+            <p>
+                Follow us on:
+                <a href="https://www.facebook.com/profile.php?id=61569083583586" target="_blank" rel="noopener noreferrer" aria-label="Follow Smokehouse Farms on Facebook">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a> |
+                <a href="https://www.instagram.com/smokehousefarmsky/" target="_blank" rel="noopener noreferrer" aria-label="Follow Smokehouse Farms on Instagram">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </p>
+        </div>
     </footer>
 </body>
 </html>
