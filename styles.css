@@ -130,6 +130,7 @@ footer {
     text-align: center;
     padding: 15px 0;
     border-top: 2px solid #6d4c41;
+    clear: both; /* Prevents overlap with previous content */
 }
 
 /* Delivery Check Styles */
@@ -139,13 +140,14 @@ footer {
 }
 
 /* Input and Button Styles */
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+textarea {
     padding: 10px;
-    width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-right: 10px;
-    align-items: center;
+    margin: 5px;
+    box-sizing: border-box;
 }
 
 button {
@@ -162,61 +164,109 @@ button:hover {
     background-color: #5b3e36;
 }
 
-/* Message Styles */
-#message {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #d32f2f; /* Red color for error messages */
-    align-items: center;
+/* Contact Form Styles */
+#contact {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center; /* Centers the header */
 }
 
 .form-container {
     text-align: center;
-    width: 50%; /* Adjust width as needed */
-    margin: 0 auto; /* Centers the container */
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Increased gap for better spacing */
 }
 
-.form-container input, .form-container textarea {
-    display: block;
-    width: 100%; /* Makes inputs full width of the container */
-    margin: 10px 0; /* Adds spacing between inputs */
+.form-container .input-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between Name and Email */
+}
+
+.form-container input,
+.form-container textarea {
+    flex: 1 1 300px;
+    max-width: 300px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.form-container textarea {
+    min-height: 100px;
+    width: 100%; /* Full width within the container */
 }
 
 .form-container button {
-    margin-top: 10px; /* Adds spacing above the button */
+    align-self: center; /* Centers the button */
+    margin-top: 10px;
 }
 
+/* Message Styles */
+#form-message {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Customer Quote Styles */
 .customer-section {
     text-align: center;
-    padding: 20px 0; /* Optional: Adds vertical padding for spacing */
+    padding: 20px 0;
+    margin-bottom: 20px; /* Added to separate from form */
 }
 
 .customer-quote {
-    background-color: #f9f9f9; /* Light background for quote boxes */
-    border-left: 4px solid #333; /* Left border to mimic quote style */
-    padding: 15px; /* Padding inside the quote box */
-    margin: 10px auto; /* Centers the quote box and adds vertical margin */
-    font-style: italic; /* Italic text for quote effect */
+    background-color: #f9f9f9;
+    border-left: 4px solid #333;
+    padding: 15px;
+    margin: 10px auto;
+    font-style: italic;
     font-size: larger;
-    color: #333; /* Darker text for contrast */
-    width: 50%; /* Sets a width to control centering */
-    display: inline-block; /* Allows centering with text-align */
+    color: #333;
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .customer-quote::before {
-    content: '“'; /* Opening quote mark */
+    content: '“';
     font-size: 1.5em;
     margin-right: 5px;
 }
 
 .customer-quote::after {
-    content: '”'; /* Closing quote mark */
+    content: '”';
     font-size: 1.5em;
     margin-left: 5px;
 }
 
 .customer-author {
-    font-weight: bold; /* Bold author name */
-    margin-top: 5px; /* Space above author */
-    text-align: right; /* Align author to the right */
+    font-weight: bold;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+    }
+
+    .form-container .input-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+        max-width: 100%;
+    }
+
+    .customer-quote {
+        width: 80%;
+    }
 }
