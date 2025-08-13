@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Garamond', serif;
+    font-family: 'Garamond', 'Times New Roman', serif;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
@@ -249,6 +249,15 @@ button:hover {
     margin-top: 5px;
     text-align: right;
 }
+
+/* Font Face ( Uncomment and adjust if using a custom font file ) */
+/* @font-face {
+    font-family: 'Garamond';
+    src: url('path/to/garamond.woff2') format('woff2'),
+         url('path/to/garamond.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
 
 /* Responsive Design */
 @media (max-width: 768px) {
